@@ -20,6 +20,10 @@ abstract class MainServer
 
     abstract public function onDispatch();
 
+    public function addListener(string $host, int $port, $type)
+    {
+    };
+
 }
 
 abstract class AsyncServer
@@ -27,6 +31,16 @@ abstract class AsyncServer
     abstract public function onStart();
 
     abstract public function onClose();
+
+    public function send(int $fd, string $data, int $from_id = 0)
+    {
+
+    }
+
+    public function close(int $fd, bool $reset = false)
+    {
+
+    }
 
 }
 
