@@ -9,7 +9,9 @@
 namespace MyChatServer;
 
 use Grape\AsyncServer;
+use Grape\int;
 use Grape\MainServer;
+use Grape\string;
 
 class MyMainServer extends MainServer
 {
@@ -51,5 +53,16 @@ class MyAServer extends AsyncServer
     {
         // TODO: Implement onClose() method.
     }
+
+    public function onReceive($server, int $fd, int $from_id, string $data)
+    {
+        // TODO: Implement onReceive() method.
+    }
+
+    public function onFinish($serv, int $task_id, string $data)
+    {
+        // TODO: Implement onFinish() method.
+    }
+
 
 }
