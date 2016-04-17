@@ -9,6 +9,7 @@
 namespace Grape;
 
 /**
+ * 主进程服务
  * Class MainServer
  * @package Grape
  */
