@@ -16,7 +16,7 @@ namespace Grape;
 abstract class MainServer
 {
     /**
-     * 主进程启动
+     * 当主进程启动时的回调函数
      * @return mixed
      */
     abstract public function onStart();
@@ -35,6 +35,11 @@ abstract class MainServer
 
 }
 
+/**
+ * 异步进程
+ * Class AsyncServer
+ * @package Grape
+ */
 abstract class AsyncServer
 {
     abstract public function onStart();
@@ -55,6 +60,11 @@ abstract class AsyncServer
 
 }
 
+/**
+ * 同步进程
+ * Class SyncServer
+ * @package Grape
+ */
 abstract class SyncServer
 {
     abstract public function onStart();
@@ -66,3 +76,4 @@ abstract class SyncServer
     }
 
 }
+
