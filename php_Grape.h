@@ -39,5 +39,18 @@ ZEND_END_MODULE_GLOBALS(Grape)
 ZEND_TSRMLS_CACHE_EXTERN();
 #endif
 
+//region MainServer
+PHP_METHOD (MainServer, __construct);
+PHP_METHOD (MainServer, __destruct);
+PHP_METHOD (MainServer, onStart);
+const zend_function_entry mainServer_functions[] = {
+        PHP_ME(MainServer, __construct, NULL, ZEND_ACC_PUBLIC | ZEND_ACC_CTOR)
+        PHP_ME(MainServer, __destruct, NULL, ZEND_ACC_PUBLIC | ZEND_ACC_DTOR)
+        PHP_ME(Person, onStart, NULL, ZEND_ACC_PUBLIC | ZEND_ACC_ABSTRACT)
+        PHP_FE_END
+};
+
+//endregion
+
 #endif	/* PHP_GRAPE_H */
 
