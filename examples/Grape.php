@@ -15,7 +15,7 @@ abstract class MainServer
      * @param $server
      * @return mixed
      */
-    abstract public function onStart($server);
+    abstract public function onStart();
 
     abstract public function onClose();
 
@@ -42,19 +42,11 @@ abstract class AsyncServer
 
     }
 
-    public function close(int $fd, bool $reset = false)
-    {
+    abstract public function close(int $fd, bool $reset = false);
 
-    }
+    abstract public function onReceive($server, int $fd, int $from_id, string $data);
 
-    public function onReceive($server, int $fd, int $from_id, string $data)
-    {
-    }
-
-    public function onFinish($serv, int $task_id, string $data)
-    {
-
-    }
+    abstract public function onFinish($serv, int $task_id, string $data);
 
 }
 
