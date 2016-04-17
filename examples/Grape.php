@@ -10,7 +10,12 @@ namespace Grape;
 
 abstract class MainServer
 {
-    abstract public function onStart();
+    /**
+     * 主进程启动
+     * @param $server
+     * @return mixed
+     */
+    abstract public function onStart($server);
 
     abstract public function onClose();
 
@@ -22,7 +27,7 @@ abstract class MainServer
 
     public function addListener(string $host, int $port, $type)
     {
-    };
+    }
 
 }
 
@@ -42,6 +47,15 @@ abstract class AsyncServer
 
     }
 
+    public function onReceive($server, int $fd, int $from_id, string $data)
+    {
+    }
+
+    public function onFinish($serv, int $task_id, string $data)
+    {
+
+    }
+
 }
 
 abstract class SyncServer
@@ -49,5 +63,9 @@ abstract class SyncServer
     abstract public function onStart();
 
     abstract public function onClose();
+
+    public function onTask($serv, int $task_id, int $from_id, string $data)
+    {
+    }
 
 }
