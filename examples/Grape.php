@@ -18,5 +18,19 @@ abstract class MainServer
 
     abstract public function onDisconnection();
 
+    abstract public function onDispatch()
+    {
+
+    }
+
 }
 
+abstract class AsyncServer
+{
+
+}
+
+abstract class SyncServer
+{
+
+}
